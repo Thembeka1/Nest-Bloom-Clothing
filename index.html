@@ -1,13 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nest&Bloom</title>
-    <link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nest&Bloom</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <nav>
+        <div>
+            <h1 class="logo">Nest&Bloom</h1>
+            <p class="sub-logo">Soft Comfort for little ones</p>
+        </div>
     
-    <script src="/main.js"></script>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    
+        <button class="cart-btn">
+            Cart 🛒 (<span id="cart-count">0</span>) - R<span id="cart-total">0</span>
+        </button>
+    
+       
+    </nav>
+
+<section class="hero">
+    <h2>Cute Baby Clothes Collection</h2>
+    <p>Shop adorable outfits for your little one</p>
+</section>
+
+<section class="products" id="products">
+<h2>Our Products</h2>
+
+<div class="product-container">
+
+ <div id="toast"></div>
+    <div class="card">
+        <img src="https:/encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ93gt-cdAb_fhUEg_iwezdGrpNysoXe5950sw-72ZCgCn2wzRUbxoZoZT1jZU&usqp=CAc">
+        <h3>Rompers</h3>
+        <p>R300</p>
+        <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="https://img.ltwebstatic.com/images3_spmp/2024/11/24/7a/1732413829afa2ab86e12753721ce3c271476335b6_thumbnail_560x.webp">
+        <h3>Outfit set</h3>
+        <p>R370</p>
+        <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/44593a02c616c4296d4fb42fb596a57c.jpg">
+        <h3>Shoes</h3>
+        <p>R280</p>
+        <button class="add-cart">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/615v9A4l7vL._AC_.jpg">
+        <h3>Dress</h3>
+        <p>R260</p>
+        <button class="add-cart">Add to Cart</button>
+    </div>
+
+</div>
+</section>
+
+<section class="about" id="about">
+<h2>About Us</h2>
+<p>Nest&Bloom is a baby clothing store offering stylish and affordable outfits.</p>
+</section>
+
+<section class="contact" id="contact">
+<h2>Contact Us</h2>
+<p>Email: Babyclothing@nestandbloom.co.za</p>
+<p>Phone: +27 11 221 775</p>
+</section>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+
+<div id="productModal" class="modal">
+    <div class="modal-content">
+
+        <span id="closeModal" style="cursor:pointer; float:right;">✖</span>
+
+        <img id="modalImg" style="width:100%; border-radius:10px;">
+        <h2 id="modalName"></h2>
+        <p id="modalPrice"></p>
+        <select id="sizeSelect" style="width:100%; padding:8px;">
+            <option>Newborn (0–3 months)</option>
+            <option>Baby (6–12 months)</option>
+            <option>Toddler (2–4 years)</option>
+        </select>
+
+        <button id="modalAddBtn">Add to Cart</button>
+    </div>
+</div>
+
+
+<div class="cart-popup" id="cartPopup">
+    <div class="cart-popup-content">
+
+        <h3>Your Cart</h3>
+
+        <div class="cart-items"></div>
+
+        <div class="cart-total">Total: R0</div>
+
+        <div class="cart-popup-buttons">
+            <button class="close-btn">Continue Shopping</button>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+<p>© 2026 Nest&Bloom</p>
+</footer>
+
+<script src="main.js"></script>
+
 </body>
 </html>
+
