@@ -1,3 +1,14 @@
+
+const modal = document.getElementById("productModal");
+const modalImg = document.getElementById("modalImg");
+const modalName = document.getElementById("modalName");
+const modalPrice = document.getElementById("modalPrice");
+const closeModal = document.getElementById("closeModal");
+const modalAddBtn = document.getElementById("modalAddBtn");
+
+let selectedProduct = null;
+
+
 document.querySelectorAll(".card").forEach(card => {
     card.onclick = (e) => {
         if (e.target.classList.contains("add-cart")) return;
@@ -15,3 +26,28 @@ document.querySelectorAll(".card").forEach(card => {
         modal.style.display = "flex";
     };
 });
+
+
+closeModal.onclick = () => modal.style.display = "none";
+
+
+modalAddBtn.onclick = () => {
+    const size = document.getElementById("sizeSelect").value;
+
+    let name = selectedProduct.name + " (" + size + ")";
+
+    let item = cart.find(i => i.name === name);
+
+    if (item) item.quantity++;
+    else cart.push({
+        name,
+        price: selectedProduct.price,
+        quantity: 1
+    });
+
+    showToast("Added to cart successfully 🛒");
+
+    updateCart();
+    modal.style.display = "none";
+};
+
