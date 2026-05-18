@@ -10,39 +10,11 @@ const cartTotalTop = document.getElementById("cart-total");
 const closeBtn = document.querySelector(".close-btn");
 const checkoutBtn = document.querySelector(".checkout-btn");
 
+/* OPEN / CLOSE CART */
 cartBtn.onclick = () => cartPopup.classList.add("active");
 closeBtn.onclick = () => cartPopup.classList.remove("active");
 
-
-function removeItem(i){
-
-    if(cart[i].quantity > 1){
-        cart[i].quantity--;
-    }else{
-        cart.splice(i,1);
-    }
-
-    updateCart();
-}
-
-/* ADD FROM PRODUCT GRID */
-document.querySelectorAll(".add-cart").forEach(btn => {
-    btn.onclick = (e) => {
-        let card = e.target.closest(".card");
-
-        let name = card.querySelector("h3").innerText;
-        let price = Number(card.querySelector("p").innerText.replace("R",""));
-
-        let item = cart.find(i => i.name === name);
-
-        if (item) item.quantity++;
-        else cart.push({ name, price, quantity: 1 });
-
-        showToast("Added to cart successfully");
-        updateCart();
-    };
-});
-
+/* MODAL */
 const modal = document.getElementById("productModal");
 const modalImg = document.getElementById("modalImg");
 const modalName = document.getElementById("modalName");
@@ -52,7 +24,7 @@ const modalAddBtn = document.getElementById("modalAddBtn");
 
 let selectedProduct = null;
 
-
+/* OPEN PRODUCT DETAIL */
 document.querySelectorAll(".card").forEach(card => {
     card.onclick = (e) => {
         if (e.target.classList.contains("add-cart")) return;
@@ -71,10 +43,10 @@ document.querySelectorAll(".card").forEach(card => {
     };
 });
 
-
+/* CLOSE MODAL */
 closeModal.onclick = () => modal.style.display = "none";
 
-
+/* ADD FROM MODAL */
 modalAddBtn.onclick = () => {
     const size = document.getElementById("sizeSelect").value;
 
@@ -95,10 +67,70 @@ modalAddBtn.onclick = () => {
     modal.style.display = "none";
 };
 
+/* ADD FROM GRID */
+document.querySelectorAll(".add-cart").forEach(btn => {
+    btn.onclick = (e) => {
+        let card = e.target.closest(".card");
+
+        let name = card.querySelector("h3").innerText;
+        let price = Number(card.querySelector("p").innerText.replace("R",""));
+
+        let item = cart.find(i => i.name === name);
+
+        if (item) item.quantity++;
+        else cart.push({ name, price, quantity: 1 });
+
+        showToast("Added to cart successfully");
+        updateCart();
+    };
+});
+
+/* UPDATE CART */
 function updateCart() {
     cartCount.innerText = cart.reduce((a,b) => a + b.quantity, 0);
 
+    let total = cart.reduce((a,b) => a + (b.price * b.quantity), 0);
 
+    cartTotalTop.innerText = total;
+
+    renderCart();
+}
+
+/* RENDER CART */
+function renderCart() {
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>🛒 Your cart is empty</p>";
+        cartTotal.innerText = "Total: R0";
+        return;
+    }
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+
+        cartItems.innerHTML += `
+        <div class="cart-item">
+            <div>
+                <strong>${item.name}</strong><br>
+                R${item.price} x ${item.quantity}
+            </div>
+            <button onclick="removeItem(${index})">X</button>
+        </div>`;
+    });
+
+    cartTotal.innerText = "Total: R" + total;
+}
+
+/* REMOVE */
+function removeItem(i) {
+    cart.splice(i,1);
+    updateCart();
+}
+
+/* CHECKOUT */
 checkoutBtn.onclick = () => {
     if(cart.length === 0){
         alert("Cart is empty!");
@@ -111,59 +143,13 @@ checkoutBtn.onclick = () => {
     cartPopup.classList.remove("active");
 };
 
-function showToast(msg) {
+/* TOAST (TOP CENTER) */
+function showToast(msg){
     let toast = document.getElementById("toast");
-
     toast.innerText = msg;
-
     toast.style.display = "block";
 
     setTimeout(() => {
-        toast.style.opacity = "1";
-        toast.style.transform = "translateY(0)";
-    }, 10);
-
-    setTimeout(() => {
-        toast.style.opacity = "0";
-        toast.style.transform = "translateY(-20px)";
-
-        setTimeout(() => {
-            toast.style.display = "none";
-        }, 400);
-
+        toast.style.display = "none";
     }, 2000);
-}
-    let total = cart.reduce((a,b) => a + (b.price * b.quantity), 0);
-
-    cartTotalTop.innerText = total;
-
-    renderCart();
-}
-
-
-function renderCart() {
-    cartItems.innerHTML = "";
-
-    if (cart.length === 0) {
-        cartItems.innerHTML = "<p> Your cart is empty</p>";
-        cartTotal.innerText = "Total: R0";
-        return;
-    }
-
-    let total = 0;
-
-    cart.forEach((item, index) => {
-        total += item.price * item.quantity;
-
-        cartItems.innerHTML +=`
-        <div class="cart-item">
-            <div>
-                <strong>${item.name}</strong><br>
-                R${item.price} x ${item.quantity}
-            </div>
-            <button onclick="removeItem(${index})">X</button>
-        </div>`;
-    });
-
-    cartTotal.innerText = "Total: R" + total;
 }
