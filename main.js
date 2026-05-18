@@ -1,6 +1,6 @@
 let cart = [];
 
-/* ELEMENTS */
+
 const cartBtn = document.querySelector(".cart-btn");
 const cartPopup = document.getElementById("cartPopup");
 const cartItems = document.querySelector(".cart-items");
@@ -10,11 +10,11 @@ const cartTotalTop = document.getElementById("cart-total");
 const closeBtn = document.querySelector(".close-btn");
 const checkoutBtn = document.querySelector(".checkout-btn");
 
-/* OPEN / CLOSE CART */
+
 cartBtn.onclick = () => cartPopup.classList.add("active");
 closeBtn.onclick = () => cartPopup.classList.remove("active");
 
-/* MODAL */
+
 const modal = document.getElementById("productModal");
 const modalImg = document.getElementById("modalImg");
 const modalName = document.getElementById("modalName");
@@ -24,7 +24,7 @@ const modalAddBtn = document.getElementById("modalAddBtn");
 
 let selectedProduct = null;
 
-/* OPEN PRODUCT DETAIL */
+
 document.querySelectorAll(".card").forEach(card => {
     card.onclick = (e) => {
         if (e.target.classList.contains("add-cart")) return;
@@ -43,10 +43,10 @@ document.querySelectorAll(".card").forEach(card => {
     };
 });
 
-/* CLOSE MODAL */
+
 closeModal.onclick = () => modal.style.display = "none";
 
-/* ADD FROM MODAL */
+
 modalAddBtn.onclick = () => {
     const size = document.getElementById("sizeSelect").value;
 
@@ -67,7 +67,7 @@ modalAddBtn.onclick = () => {
     modal.style.display = "none";
 };
 
-/* ADD FROM GRID */
+
 document.querySelectorAll(".add-cart").forEach(btn => {
     btn.onclick = (e) => {
         let card = e.target.closest(".card");
@@ -85,7 +85,7 @@ document.querySelectorAll(".add-cart").forEach(btn => {
     };
 });
 
-/* UPDATE CART */
+
 function updateCart() {
     cartCount.innerText = cart.reduce((a,b) => a + b.quantity, 0);
 
@@ -96,7 +96,7 @@ function updateCart() {
     renderCart();
 }
 
-/* RENDER CART */
+
 function renderCart() {
     cartItems.innerHTML = "";
 
@@ -124,13 +124,17 @@ function renderCart() {
     cartTotal.innerText = "Total: R" + total;
 }
 
-/* REMOVE */
+
 function removeItem(i) {
-    cart.splice(i,1);
+    if (cart[i].quantity > 1) {
+        cart[i].quantity--; // remove only 1 item
+    } else {
+        cart.splice(i, 1); // remove product completely
+    }
+
     updateCart();
 }
 
-/* CHECKOUT */
 checkoutBtn.onclick = () => {
     if(cart.length === 0){
         alert("Cart is empty!");
@@ -143,13 +147,25 @@ checkoutBtn.onclick = () => {
     cartPopup.classList.remove("active");
 };
 
-/* TOAST (TOP CENTER) */
-function showToast(msg){
+function showToast(msg) {
     let toast = document.getElementById("toast");
+
     toast.innerText = msg;
+
     toast.style.display = "block";
 
     setTimeout(() => {
-        toast.style.display = "none";
+        toast.style.opacity = "1";
+        toast.style.transform = "translateY(0)";
+    }, 10);
+
+    setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(-20px)";
+
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 400);
+
     }, 2000);
 }
