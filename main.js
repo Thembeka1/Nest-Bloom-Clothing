@@ -95,6 +95,8 @@ modalAddBtn.onclick = () => {
     modal.style.display = "none";
 };
 
+function updateCart() {
+    cartCount.innerText = cart.reduce((a,b) => a + b.quantity, 0);
 
 
 checkoutBtn.onclick = () => {
@@ -130,4 +132,38 @@ function showToast(msg) {
         }, 400);
 
     }, 2000);
+}
+    let total = cart.reduce((a,b) => a + (b.price * b.quantity), 0);
+
+    cartTotalTop.innerText = total;
+
+    renderCart();
+}
+
+
+function renderCart() {
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p> Your cart is empty</p>";
+        cartTotal.innerText = "Total: R0";
+        return;
+    }
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+
+        cartItems.innerHTML +=`
+        <div class="cart-item">
+            <div>
+                <strong>${item.name}</strong><br>
+                R${item.price} x ${item.quantity}
+            </div>
+            <button onclick="removeItem(${index})">X</button>
+        </div>`;
+    });
+
+    cartTotal.innerText = "Total: R" + total;
 }
