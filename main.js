@@ -1,3 +1,18 @@
+let cart = [];
+
+/* ELEMENTS */
+const cartBtn = document.querySelector(".cart-btn");
+const cartPopup = document.getElementById("cartPopup");
+const cartItems = document.querySelector(".cart-items");
+const cartTotal = document.querySelector(".cart-total");
+const cartCount = document.getElementById("cart-count");
+const cartTotalTop = document.getElementById("cart-total");
+const closeBtn = document.querySelector(".close-btn");
+const checkoutBtn = document.querySelector(".checkout-btn");
+
+cartBtn.onclick = () => cartPopup.classList.add("active");
+closeBtn.onclick = () => cartPopup.classList.remove("active");
+
 
 function removeItem(i){
 
@@ -79,5 +94,6 @@ modalAddBtn.onclick = () => {
     updateCart();
     modal.style.display = "none";
 };
+
 
 
