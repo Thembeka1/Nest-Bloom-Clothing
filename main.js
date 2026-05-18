@@ -97,3 +97,37 @@ modalAddBtn.onclick = () => {
 
 
 
+checkoutBtn.onclick = () => {
+    if(cart.length === 0){
+        alert("Cart is empty!");
+        return;
+    }
+
+    alert("Order placed successfully 🎉");
+    cart = [];
+    updateCart();
+    cartPopup.classList.remove("active");
+};
+
+function showToast(msg) {
+    let toast = document.getElementById("toast");
+
+    toast.innerText = msg;
+
+    toast.style.display = "block";
+
+    setTimeout(() => {
+        toast.style.opacity = "1";
+        toast.style.transform = "translateY(0)";
+    }, 10);
+
+    setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(-20px)";
+
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 400);
+
+    }, 2000);
+}
