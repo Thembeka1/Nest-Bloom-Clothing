@@ -1,133 +1,977 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nest&Bloom</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nest&Bloom | Baby Boutique</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="brand">
+        <h1>Nest<span>&</span>Bloom</h1>
+        <p>Soft things for little beginnings</p>
+    </div>
+
     <nav>
-        <div>
-            <h1 class="logo">Nest&Bloom</h1>
-            <p class="sub-logo">Soft Comfort for little ones</p>
-        </div>
-    
-        <ul> 
-            <li><a href="#">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    
-        <button class="cart-btn">
-            Cart 🛒 (<span id="cart-count">0</span>) - R<span id="cart-total">0</span>
-        </button>
-    
-       
+        <a href="#home">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#story">Our Story</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-<section class="hero">
-    <h2>Cute Baby Clothes Collection</h2>
-    <p>Shop adorable outfits for your little one</p>
+    <div class="nav-actions">
+
+        <button id="accountBtn" class="nav-icon">
+            ♡
+            <span>Account</span>
+        </button>
+
+        <button id="wishlistBtn" class="nav-icon">
+            ♡
+            <span id="wishlist-count">0</span>
+        </button>
+
+        <button id="cartBtn" class="bag-button">
+            Bag
+            <span id="cart-count">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            WELCOME TO NEST&BLOOM
+        </p>
+
+        <h2>
+            Little clothes for
+            <span>big little moments.</span>
+        </h2>
+
+        <p class="hero-text">
+            Beautiful, comfortable clothing made for newborn days,
+            first smiles and every tiny adventure in between.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#new-arrivals" class="primary-btn">
+                Shop New Arrivals
+            </a>
+
+            <a href="#collections" class="secondary-btn">
+                Explore Collections
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz-sHH8l0Nuhkun4MtB_hLhrRLMbzjc4IC19GSCzFTew&s=10"
+            alt="Baby wearing clothing"
+        >
+
+        <div class="hero-note">
+            <strong>Made for little ones</strong>
+            <span>Soft • Simple • Special</span>
+        </div>
+
+    </div>
+
 </section>
 
-<section class="products" id="products">
-<h2>Our Products</h2>
 
-<div class="product-container">
+<!-- ================= COLLECTIONS ================= -->
 
- <div id="toast"></div>
-    <div class="card">
-        <img src="https:/encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ93gt-cdAb_fhUEg_iwezdGrpNysoXe5950sw-72ZCgCn2wzRUbxoZoZT1jZU&usqp=CAc">
-        <h3>Rompers</h3>
-        <p>R300</p>
-        <button class="add-cart">Add to Cart</button>
+<section class="collections" id="collections">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            EXPLORE
+        </p>
+
+        <h2>
+            Shop by Collection
+        </h2>
+
+        <p>
+            Carefully chosen pieces for every little stage.
+        </p>
+
     </div>
 
-    <div class="card">
-        <img src="https://img.ltwebstatic.com/images3_spmp/2024/11/24/7a/1732413829afa2ab86e12753721ce3c271476335b6_thumbnail_560x.webp">
-        <h3>Outfit set</h3>
-        <p>R370</p>
-        <button class="add-cart">Add to Cart</button>
+
+    <div class="collection-grid">
+
+        <!-- NEWBORN COLLECTION -->
+
+        <article class="collection-card large">
+
+            <img
+                src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRB9TcdaSzJYwUWWDtUf3SaBVWqiPjNrM2dXvSuazQ6tSg-KaNfAf9h0vXouMD2KXVxmXCDoDuDydjwtIUZDCnL_EUix5TKGp94QNtDrixPteCMT3t3oWSwzA&usqp=CAc"
+                alt="Newborn baby"
+            >
+
+            <div class="collection-content">
+
+                <p>01</p>
+
+                <h3>
+                    Newborn Days
+                </h3>
+
+                <span>
+                    Soft pieces for their first days.
+                </span>
+
+                <button
+                    class="collection-btn"
+                    data-category="newborn"
+                >
+                    Explore
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- BABY GIRL COLLECTION -->
+
+        <article class="collection-card">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5am2ZzXYdQw2OrVZoU8oS39iSNdiCjklvfPN03Ae44Q&s=10"
+                alt="Baby girl clothing"
+            >
+
+            <div class="collection-content">
+
+                <p>02</p>
+
+                <h3>
+                    Little Bloom
+                </h3>
+
+                <span>
+                    Sweet pieces for little girls.
+                </span>
+
+                <button
+                    class="collection-btn"
+                    data-category="girls"
+                >
+                    Explore
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- BABY BOY COLLECTION -->
+
+        <article class="collection-card">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh5fB5e9vvLpnor1BCkSGEVmFnw2V14JsbCIv6ONZh4A&s=10"
+                alt="Baby boy clothing"
+            >
+
+            <div class="collection-content">
+
+                <p>03</p>
+
+                <h3>
+                    Little Bear
+                </h3>
+
+                <span>
+                    Comfortable everyday essentials.
+                </span>
+
+                <button
+                    class="collection-btn"
+                    data-category="boys"
+                >
+                    Explore
+                </button>
+
+            </div>
+
+        </article>
+
     </div>
 
-    <div class="card">
-        <img src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/44593a02c616c4296d4fb42fb596a57c.jpg">
-        <h3>Shoes</h3>
-        <p>R280</p>
-        <button class="add-cart">Add to Cart</button>
+</section>
+
+
+<!-- ================= NEW ARRIVALS ================= -->
+
+<section class="new-arrivals" id="new-arrivals">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            JUST IN
+        </p>
+
+        <h2>
+            New Arrivals
+        </h2>
+
+        <p>
+            Tiny pieces, thoughtfully selected.
+        </p>
+
     </div>
 
-    <div class="card">
-        <img src="https://m.media-amazon.com/images/I/615v9A4l7vL._AC_.jpg">
-        <h3>Dress</h3>
-        <p>R260</p>
-        <button class="add-cart">Add to Cart</button>
+
+    <div class="arrival-layout">
+
+        <!-- FEATURED OUTFIT -->
+
+        <div class="featured-product">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtwIOj3shSVP6Q1upmGjO4frED9qPJQm92KMXgiioL6A&s=10"
+                alt="Baby outfit set"
+            >
+
+            <div class="featured-info">
+
+                <span>
+                    FEATURED
+                </span>
+
+                <h3>
+                    Soft Morning Set
+                </h3>
+
+                <p>
+                    A comfortable two-piece set made for slow mornings
+                    and cuddles.
+                </p>
+
+                <strong>
+                    R420
+                </strong>
+
+                <button
+                    class="add-product"
+                    data-name="Soft Morning Set"
+                    data-price="310"
+                    data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaWHxQIMB07otUI1ulbqkZrQaE0MxBzk8K3e0GQILhfA&s=10"
+                >
+                    Add to Bag
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SMALL PRODUCTS -->
+
+        <div class="small-products">
+
+            <!-- ROMPER -->
+
+            <article class="mini-product">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaWHxQIMB07otUI1ulbqkZrQaE0MxBzk8K3e0GQILhfA&s=10"
+                    alt="Baby romper"
+                >
+
+                <div>
+
+                    <p>
+                        Newborn
+                    </p>
+
+                    <h3>
+                        Cloud Romper
+                    </h3>
+
+                    <strong>
+                        R300
+                    </strong>
+
+                    <button
+                        class="add-product"
+                        data-name="Cloud Romper"
+                        data-price="300"
+                        data-image=""
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- OUTFIT SET -->
+
+            <article class="mini-product">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjnrFhe-afla0mTtuncFOvyxgGDwT-gsWnTYarMa3gQA&s=10"
+                    alt="Baby outfit set"
+                >
+
+                <div>
+
+                    <p>
+                        Everyday
+                    </p>
+
+                    <h3>
+                        Little Day Set
+                    </h3>
+
+                    <strong>
+                        R350
+                    </strong>
+
+                    <button
+                        class="add-product"
+                        data-name="Little Day Set"
+                        data-price="250"
+                        data-image="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=700&q=85"
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ACCESSORIES -->
+
+            <article class="mini-product">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZTm8jfuc_9tQjV8nCUzbTBiR31XbxOzd524zatB0Z4A&s=10"
+                    alt="Baby accessories"
+                >
+
+                <div>
+
+                    <p>
+                        Accessories
+                    </p>
+
+                    <h3>
+                        Little Essentials
+                    </h3>
+
+                    <strong>
+                        R180
+                    </strong>
+
+                    <button
+                        class="add-product"
+                        data-name="Little Essentials"
+                        data-price="180"
+                        data-image="https://images.unsplash.com/photo-1604917019115-4a9f9c0c8b0b?auto=format&fit=crop&w=700&q=85"
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GIFT BOX ================= -->
+
+<section class="gift-section">
+
+    <div class="gift-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=1000&q=85"
+            alt="Baby gift box"
+        >
+
+    </div>
+
+
+    <div class="gift-content">
+
+        <p class="eyebrow">
+            A LITTLE SOMETHING SPECIAL
+        </p>
+
+        <h2>
+            Build a Baby Gift Box
+        </h2>
+
+        <p>
+            Create a thoughtful little bundle for a new baby.
+            Choose your favourite pieces and add a personal message.
+        </p>
+
+        <button
+            id="giftBoxBtn"
+            class="primary-btn"
+        >
+            Create Gift Box
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STORY ================= -->
+
+<section class="story" id="story">
+
+    <div class="story-content">
+
+        <p class="eyebrow">
+            OUR STORY
+        </p>
+
+        <h2>
+            Made with love for little beginnings.
+        </h2>
+
+        <p>
+            Nest&Bloom was created around one simple idea:
+            baby clothing should feel as beautiful as it feels comfortable.
+        </p>
+
+        <p>
+            From soft newborn essentials to everyday outfits,
+            every piece is chosen with comfort, simplicity and
+            those precious little moments in mind.
+        </p>
+
+        <a href="#contact" class="text-link">
+            Get to know us →
+        </a>
+
+    </div>
+
+
+    <div class="story-card">
+
+        <div class="story-number">
+            01
+        </div>
+
+        <h3>
+            Soft fabrics
+        </h3>
+
+        <p>
+            Gentle pieces made for delicate little skin.
+        </p>
+
+    </div>
+
+
+    <div class="story-card">
+
+        <div class="story-number">
+            02
+        </div>
+
+        <h3>
+            Simple style
+        </h3>
+
+        <p>
+            Neutral, timeless pieces that are easy to love.
+        </p>
+
+    </div>
+
+
+    <div class="story-card">
+
+        <div class="story-number">
+            03
+        </div>
+
+        <h3>
+            Little moments
+        </h3>
+
+        <p>
+            Clothes made for memories you will keep forever.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-content">
+
+        <p class="eyebrow">
+            LET'S KEEP IN TOUCH
+        </p>
+
+        <h2>
+            Stay close to the Nest.
+        </h2>
+
+        <p>
+            Subscribe for new arrivals, special offers and
+            little bits of inspiration.
+        </p>
+
+    </div>
+
+
+    <form id="newsletterForm">
+
+        <input
+            type="email"
+            id="newsletterEmail"
+            placeholder="Your email address"
+            required
+        >
+
+        <button type="submit">
+            Subscribe
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= ACCOUNT MODAL ================= -->
+
+<div
+    class="modal"
+    id="accountModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            id="accountClose"
+        >
+            ×
+        </button>
+
+
+        <div id="loginForm">
+
+            <p class="eyebrow">
+                WELCOME BACK
+            </p>
+
+            <h2>
+                Sign in
+            </h2>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email address"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+            >
+
+            <button
+                id="loginBtn"
+                class="primary-btn"
+            >
+                Sign In
+            </button>
+
+            <p>
+                Don't have an account?
+
+                <button
+                    id="showRegister"
+                    class="text-button"
+                >
+                    Create one
+                </button>
+
+            </p>
+
+        </div>
+
+
+        <div
+            id="registerForm"
+            class="hidden"
+        >
+
+            <p class="eyebrow">
+                JOIN THE NEST
+            </p>
+
+            <h2>
+                Create account
+            </h2>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Full name"
+            >
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Email address"
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Password"
+            >
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+            >
+
+            <button
+                id="registerBtn"
+                class="primary-btn"
+            >
+                Create Account
+            </button>
+
+            <p>
+                Already have an account?
+
+                <button
+                    id="showLogin"
+                    class="text-button"
+                >
+                    Sign in
+                </button>
+
+            </p>
+
+        </div>
+
     </div>
 
 </div>
-</section>
 
-<section class="about" id="about">
-<h2>About Us</h2>
-<p>Nest&Bloom is a baby clothing store offering stylish and affordable outfits.</p>
-</section>
 
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
-<p>Email: Babyclothing@nestandbloom.co.za</p>
-<p>Phone: +27 11 221 775</p>
-</section>
+<!-- ================= WISHLIST ================= -->
 
-<!-- TOAST -->
+<div
+    class="side-panel"
+    id="wishlistPopup"
+>
+
+    <div class="side-panel-header">
+
+        <h2>
+            Your Wishlist
+        </h2>
+
+        <button id="wishlistClose">
+            ×
+        </button>
+
+    </div>
+
+    <div id="wishlistItems"></div>
+
+</div>
+
+
+<!-- ================= CART ================= -->
+
+<div
+    class="side-panel"
+    id="cartPopup"
+>
+
+    <div class="side-panel-header">
+
+        <div>
+
+            <p class="eyebrow">
+                YOUR
+            </p>
+
+            <h2>
+                Shopping Bag
+            </h2>
+
+        </div>
+
+        <button id="cartClose">
+            ×
+        </button>
+
+    </div>
+
+    <div class="cart-items"></div>
+
+    <div class="cart-bottom">
+
+        <div class="cart-total-row">
+
+            <span>
+                Total
+            </span>
+
+            <strong class="cart-total">
+                R0
+            </strong>
+
+        </div>
+
+        <button class="checkout-btn">
+            Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= GIFT BOX MODAL ================= -->
+
+<div
+    class="modal"
+    id="giftModal"
+>
+
+    <div class="gift-modal-box">
+
+        <button
+            class="modal-close"
+            id="giftClose"
+        >
+            ×
+        </button>
+
+        <p class="eyebrow">
+            CREATE SOMETHING SPECIAL
+        </p>
+
+        <h2>
+            Your Baby Gift Box
+        </h2>
+
+        <p>
+            Choose three little gifts.
+        </p>
+
+
+        <div class="gift-options">
+
+            <button
+                class="gift-option"
+                data-name="Cloud Romper"
+                data-price="300"
+            >
+                <span>☁️</span>
+                <strong>Cloud Romper</strong>
+                <small>R300</small>
+            </button>
+
+
+            <button
+                class="gift-option"
+                data-name="Little Day Set"
+                data-price="350"
+            >
+                <span>🌸</span>
+                <strong>Little Day Set</strong>
+                <small>R350</small>
+            </button>
+
+
+            <button
+                class="gift-option"
+                data-name="Baby Bib Set"
+                data-price="150"
+            >
+                <span>🧸</span>
+                <strong>Baby Bib Set</strong>
+                <small>R150</small>
+            </button>
+
+
+            <button
+                class="gift-option"
+                data-name="Soft Socks"
+                data-price="120"
+            >
+                <span>🧦</span>
+                <strong>Soft Socks</strong>
+                <small>R120</small>
+            </button>
+
+
+            <button
+                class="gift-option"
+                data-name="Little Hat"
+                data-price="140"
+            >
+                <span>🎀</span>
+                <strong>Little Hat</strong>
+                <small>R140</small>
+            </button>
+
+
+            <button
+                class="gift-option"
+                data-name="Baby Blanket"
+                data-price="380"
+            >
+                <span>🤍</span>
+                <strong>Baby Blanket</strong>
+                <small>R380</small>
+            </button>
+
+        </div>
+
+
+        <div class="gift-summary">
+
+            <h3>
+                Your Selection
+            </h3>
+
+            <div id="giftSelected">
+                Choose your gifts above.
+            </div>
+
+            <textarea
+                id="giftMessage"
+                placeholder="Add a personal message..."
+            ></textarea>
+
+            <div class="gift-total">
+
+                <span>
+                    Gift Box Total
+                </span>
+
+                <strong id="giftTotal">
+                    R0
+                </strong>
+
+            </div>
+
+            <button
+                id="addGiftBox"
+                class="primary-btn"
+            >
+                Add Gift Box to Bag
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
 <div id="toast"></div>
 
 
-<div id="productModal" class="modal">
-    <div class="modal-content">
-
-        <span id="closeModal" style="cursor:pointer; float:right;">✖</span>
-
-        <img id="modalImg" style="width:100%; border-radius:10px;">
-        <h2 id="modalName"></h2>
-        <p id="modalPrice"></p>
-        <select id="sizeSelect" style="width:100%; padding:8px;">
-            <option>Newborn (0–3 months)</option>
-            <option>Baby (6–12 months)</option>
-            <option>Toddler (2–4 years)</option>
-        </select>
-
-        <button id="modalAddBtn">Add to Cart</button>
-    </div>
-</div>
-
-
-<div class="cart-popup" id="cartPopup">
-    <div class="cart-popup-content">
-
-        <h3>Your Cart</h3>
-
-        <div class="cart-items"></div>
-
-        <div class="cart-total">Total: R0</div>
-
-        <div class="cart-popup-buttons">
-            <button class="close-btn">Continue Shopping</button>
-            <button class="checkout-btn">Checkout</button>
-        </div>
-
-    </div>
-</div>
+<!-- ================= FOOTER ================= -->
 
 <footer>
-<p>© 2026 Nest&Bloom</p>
+
+    <div class="footer-brand">
+
+        <h2>
+            Nest<span>&</span>Bloom
+        </h2>
+
+        <p>
+            Soft things for little beginnings.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#collections">
+            Collections
+        </a>
+
+        <a href="#new-arrivals">
+            New Arrivals
+        </a>
+
+        <a href="#story">
+            Our Story
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 Nest&Bloom. Made with love.
+    </p>
+
 </footer>
+
 
 <script src="main.js"></script>
 
 </body>
 </html>
-

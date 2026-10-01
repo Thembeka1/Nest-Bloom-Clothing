@@ -1,0 +1,23 @@
+{
+  "name": "nest-bloom-clothing",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thembeka1/Nest-Bloom-Clothing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thembeka1/Nest-Bloom-Clothing/issues"
+  },
+  "homepage": "https://github.com/Thembeka1/Nest-Bloom-Clothing#readme",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
